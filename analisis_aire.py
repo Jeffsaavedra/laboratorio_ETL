@@ -70,14 +70,15 @@ print(data_calidad_aire.head())"""
 #----------->>>>>>>>>> EJERCICIO 3 <<<<<<<<<<---------------------------
 
 def ej_3_limpiar_datos_demograficos(data_demograficos: pd.DataFrame) -> pd.DataFrame:
-    # Elimina columnas especificadas
-    data_demograficos = data_demograficos.drop(columns=["Race", "Count", "Number of Veterans"])
 
     # Elimina filas duplicadas
     data_demograficos = data_demograficos.drop_duplicates()
-
+    print("Datos corregidos con exito")
     return data_demograficos
 
+if __name__ == "__main__":
+    df = pd.read_csv("datos_demograficos.csv")
+    ej_3_limpiar_datos_demograficos(df)
 #----------->>>>>>>>>> EJERCICIO 4 <<<<<<<<<<---------------------------
 
 import sqlite3
